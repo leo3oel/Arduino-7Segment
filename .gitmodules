@@ -1,0 +1,3 @@
+[submodule "Import/Arduino-Pin"]
+	path = Import/Arduino-Pin
+	url = git@github.com:leo3oel/Arduino-Pin.git
