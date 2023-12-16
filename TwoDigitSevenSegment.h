@@ -1,21 +1,23 @@
 #ifndef SEVENSEGMENT_H
 #define SEVENSEGMENT_H
 
+#include <Arduino.h>
 #include "Import/Arduino-Pin/pin.h"
 #include "SingleDigitSevenSegment.h"
+// #include "SingleDigitSevenSegment.cpp"
 
 class TwoDigitSevenSegment
 {
 private:
     short segmentLength;
-    Pin dataPin;
+    unsigned short dataPin;
     SingleDigitSevenSegment digits[2];
     Adafruit_NeoPixel ledPixels;
 
 
 public:
-    TwoDigitSevenSegment(Pin dataPin, short segmentLength);
-    void setNumber(short number);
+    TwoDigitSevenSegment(unsigned short dataPin, short segmentLength);
+    void setNumber(unsigned short number);
     void turnOff();
     void turnOn();
     void setLedSettings(

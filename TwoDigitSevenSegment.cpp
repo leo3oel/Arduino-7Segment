@@ -1,15 +1,15 @@
 #include "TwoDigitSevenSegment.h"
 
-TwoDigitSevenSegment::TwoDigitSevenSegment(Pin dataPin, short segmentLength)
+TwoDigitSevenSegment::TwoDigitSevenSegment(unsigned short dataPin, short segmentLength)
     : dataPin(dataPin), segmentLength(segmentLength)
 {
     short ledLength = segmentLength * 7 * 2;
-    ledPixels = Adafruit_NeoPixel(ledLength, dataPin.getPinNumber(), NEO_GRB + NEO_KHZ800); // LED Array
+    ledPixels = Adafruit_NeoPixel(ledLength, dataPin, NEO_GRB + NEO_KHZ800); // LED Array
     digits[0] = SingleDigitSevenSegment(ledPixels,0,segmentLength);
     digits[1] = SingleDigitSevenSegment(ledPixels,segmentLength*7,segmentLength);
 }
 
-void TwoDigitSevenSegment::setNumber(short number)
+void TwoDigitSevenSegment::setNumber(unsigned short number)
 {
     digits[1].setNumber(int(number/10));
     digits[0].setNumber(number%10);

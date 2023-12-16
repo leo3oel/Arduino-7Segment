@@ -5,6 +5,7 @@ SingleDigitSevenSegment::SingleDigitSevenSegment(
     unsigned short startLed, 
     unsigned short segmentLength
     )
+{
     initializeSegments(ledArray, startLed, segmentLength);
 }
 

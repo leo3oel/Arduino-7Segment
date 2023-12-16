@@ -1,9 +1,10 @@
 #ifndef SINGLEDIGIT_H
 #define SINGLEDIGIT_H
 
+#include <Arduino.h>
 #include "BasicSegment.h"
 
-class SingleDigitSevenSegment : public Segment
+class SingleDigitSevenSegment //: public Segment
 {
 private:
     BasicSegment segments[7];
@@ -19,6 +20,7 @@ private:
     void turnOnSegments(bool segmentList[7]);
 
 public:
+    SingleDigitSevenSegment() {};
     SingleDigitSevenSegment(
         Adafruit_NeoPixel& ledArray, 
         unsigned short startLed, 
