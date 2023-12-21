@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include "BasicSegment.h"
 
-class SingleDigitSevenSegment : public Segment
+class SingleDigitSevenSegment //: public Segment
 {
 private:
     BasicSegment segments[7];

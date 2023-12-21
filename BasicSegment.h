@@ -39,7 +39,7 @@ class Segment
 public:
     virtual void turnOn() = 0;
     virtual void turnOff() = 0;
-    virtual ~Segment() {}
+    virtual ~Segment() {};
 };
 
 class BasicSegment : public Segment
@@ -55,6 +55,7 @@ private:
 public:
     BasicSegment() = default;
     BasicSegment(Adafruit_NeoPixel& ledArray, short startLed, short segmentLength);
+    ~BasicSegment() {};
     void turnOn();
     void turnOff();
     void setBrightness(short brightness);
