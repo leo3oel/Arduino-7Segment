@@ -1,7 +1,13 @@
 #ifndef BASICSEGMENT_H
 #define BASICSEGMENT_H
 
+#ifdef ARDUINO
 #include <Adafruit_NeoPixel.h>
+#else
+#include "test/Placeholders/Adafruit.h"
+#endif
+
+#include <stdexcept>
 
 class rgbColors
 {
@@ -9,7 +15,7 @@ public:
     unsigned short red = 0;
     unsigned short green = 255;
     unsigned short blue = 0;
-    rgbColors();
+    rgbColors() = default;
     rgbColors(unsigned short red, unsigned short green, unsigned short blue)
     {
         this->red = red;
@@ -47,12 +53,15 @@ private:
     short brightness = 200;
 
 public:
-    BasicSegment();
+    BasicSegment() = default;
     BasicSegment(Adafruit_NeoPixel& ledArray, short startLed, short segmentLength);
     void turnOn();
     void turnOff();
     void setBrightness(short brightness);
-    void setColor(unsigned short red, unsigned short green, unsigned short blue);
+    void setColors(unsigned short red, unsigned short green, unsigned short blue);
+    bool getState();
+    int getBrightness();
+    rgbColors getColors();
 };
 
 #endif

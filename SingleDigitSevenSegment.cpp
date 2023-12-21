@@ -5,6 +5,7 @@ SingleDigitSevenSegment::SingleDigitSevenSegment(
     unsigned short startLed, 
     unsigned short segmentLength
     )
+{
     initializeSegments(ledArray, startLed, segmentLength);
 }
 
@@ -33,8 +34,22 @@ void SingleDigitSevenSegment::initializeSegments(
     }
 }
 
+void SingleDigitSevenSegment::turnOff()
+{
+    for (short i=0; i<7; i++)
+        segments[i].turnOff();
+}
+
+void SingleDigitSevenSegment::turnOn()
+{
+    for (short i=0; i<7; i++)
+        segments[i].turnOn();
+}
+
 void SingleDigitSevenSegment::setNumber(unsigned short number)
 {
+    if (number>9 || number<0)
+        throw std::invalid_argument("value must be in range 0..9");
     if (currentNumber != number)
     {
         currentNumber = number;
@@ -103,5 +118,18 @@ void SingleDigitSevenSegment::setLedSettings(unsigned short red, unsigned short 
 {
     ledArray.setBrightness(brightness);
     for (int i=0; i<7; i++)
-        segments[i].setColor(red, green, blue);
+    {
+        segments[i].setColors(red, green, blue);
+        segments[i].setBrightness(brightness);
+    }
+}
+
+int SingleDigitSevenSegment::getNumber()
+{
+    return currentNumber;
+}
+
+BasicSegment* SingleDigitSevenSegment::getSegments()
+{
+    return segments;
 }
