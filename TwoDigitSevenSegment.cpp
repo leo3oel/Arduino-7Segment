@@ -11,6 +11,7 @@ TwoDigitSevenSegment::TwoDigitSevenSegment(unsigned short dataPin, short segment
 
 void TwoDigitSevenSegment::setNumber(unsigned short number)
 {
+    this->number = number;
     digits[1].setNumber(int(number/10));
     digits[0].setNumber(number%10);
 }
@@ -36,4 +37,15 @@ void TwoDigitSevenSegment::setLedSettings(
 {
     for (int i=0; i<2; i++)
         digits[i].setLedSettings(red, green, blue,  brightness);
+}
+
+short TwoDigitSevenSegment::getNumber()
+{
+    return number;
+}
+
+
+SingleDigitSevenSegment* TwoDigitSevenSegment::getDigits()
+{
+    return digits;
 }

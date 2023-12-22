@@ -7,6 +7,7 @@ project(${This} CXX)
 set(Sources
   TestBasicSegment.cpp
   TestSingleDigitSevenSegment.cpp
+  TestTwoDigitSevenSegment.cpp
 )
 
 add_executable(${This} ${Sources})
