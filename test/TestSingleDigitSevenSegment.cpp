@@ -17,8 +17,6 @@ TEST(SingleDigitSevenSegmentTest, SetNumberTest) {
     EXPECT_EQ(singleDigit.getNumber(), 5);
     singleDigit.setNumber(9);
     EXPECT_EQ(singleDigit.getNumber(), 9);
-    EXPECT_THROW(singleDigit.setNumber(10), std::invalid_argument);
-    EXPECT_THROW(singleDigit.setNumber(-1), std::invalid_argument);
 }
 
 TEST(SingleDigitSevenSegmentTest, TurnOnTest) {

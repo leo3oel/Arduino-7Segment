@@ -1,7 +1,6 @@
 #ifndef SINGLEDIGIT_H
 #define SINGLEDIGIT_H
 
-#include <stdexcept>
 #include "BasicSegment.h"
 
 class SingleDigitSevenSegment //: public Segment

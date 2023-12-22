@@ -40,8 +40,6 @@ void BasicSegment::turnOn()
 
 void BasicSegment::setBrightness(short newBrightness)
 {
-    if (newBrightness>255 || newBrightness<0)
-        throw std::invalid_argument("value must be in range 0..255");
     if (brightness != newBrightness)
     {
         brightness = newBrightness;
@@ -52,8 +50,6 @@ void BasicSegment::setBrightness(short newBrightness)
 
 void BasicSegment::setColors(unsigned short red, unsigned short green, unsigned short blue)
 {
-    if (red>255 || green > 255 || blue>255 || red<0 || green<0 || blue<0)
-        throw std::invalid_argument("value must be in range 0..255");
     rgbColors newColor = rgbColors(red, green, blue);
     if (colors != newColor)
     {

@@ -17,8 +17,6 @@ TEST(TwoDigitSevenSegmentTest, TestSetNumber)
     EXPECT_EQ(doubleDigit.getNumber(), 0);
     doubleDigit.setNumber(99);
     EXPECT_EQ(doubleDigit.getNumber(), 99);
-    EXPECT_THROW(doubleDigit.setNumber(-1), std::invalid_argument);
-    EXPECT_THROW(doubleDigit.setNumber(100), std::invalid_argument);
 }
 
 TEST(TwoDigitSevenSegmentTest, TestTurnOff)

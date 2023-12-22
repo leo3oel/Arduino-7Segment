@@ -34,8 +34,6 @@ TEST(BasicSegment, SetBrightness)
     EXPECT_EQ(segment.getBrightness(), 5);
     segment.setBrightness(255);
     EXPECT_EQ(segment.getBrightness(), 255);
-    EXPECT_THROW(segment.setBrightness(256), std::invalid_argument);
-    EXPECT_THROW(segment.setBrightness(-1), std::invalid_argument);
 }
 
 TEST(BasicSegment, setColors)
@@ -47,6 +45,4 @@ TEST(BasicSegment, setColors)
     rgbColors minColors = rgbColors(0,0,0);
     segment.setColors(0,0,0);
     EXPECT_EQ(segment.getColors(), minColors);
-    EXPECT_THROW(segment.setColors(256,0,0), std::invalid_argument);
-    EXPECT_THROW(segment.setColors(255,-1,0), std::invalid_argument);
 }

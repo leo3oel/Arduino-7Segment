@@ -7,8 +7,6 @@
 #include "test/Placeholders/Adafruit.h"
 #endif
 
-#include <stdexcept>
-
 class rgbColors
 {
 public:

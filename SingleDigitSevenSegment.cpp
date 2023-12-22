@@ -48,8 +48,6 @@ void SingleDigitSevenSegment::turnOn()
 
 void SingleDigitSevenSegment::setNumber(unsigned short number)
 {
-    if (number>9 || number<0)
-        throw std::invalid_argument("value must be in range 0..9");
     if (currentNumber != number)
     {
         currentNumber = number;
